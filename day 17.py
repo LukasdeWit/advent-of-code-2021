@@ -31,7 +31,7 @@ def is_in_trajectory(x_min, x_max, x_speed):
 
 
 def two():
-    data = open("day 17 data.txt").readline()
+    data = open("day 17 data myrte.txt").readline()
     x_range, y_range = data[13:].split(", ")
     x_min, x_max = [int(x) for x in x_range[2:].split("..")]
     y_min, y_max = [int(y) for y in y_range[2:].split("..")]
@@ -61,6 +61,7 @@ def two():
             for y_speed in range(y_min, abs(y_min) + 1):
                 if y_hits_box(y_min, y_max, y_speed, x_speed) and (x_speed, y_speed) not in total:
                     total.append((x_speed, y_speed))
+                    
     return len(total)
 
 
